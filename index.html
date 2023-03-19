@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Face Recognition</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+
+  <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <body>
+
+        <div class="container">
+        <center>
+        <h1>Face Recognition</h1>
+        
+        <br><br>
+        <p style="font-size: 22 px;">Model is trained to identify the following objects :</p>
+        <br>
+
+        <span class="btn btn-primary">Mother</span>
+        <br><br>
+        <span class="btn btn-primary">Little Brother</span>
+        <br><br>
+        <span class="btn btn-primary">Older Brother</span>
+
+<br><br><br><br>
+        <label>Webcam View - </label>
+        <div id="camera"></div>
+        <br>
+        <div id="result"></div>
+        <br>
+
+        <button onclick="takeSnapshot()" class="btn btn-info">Capture Image</button>
+        <br><br>
+        <button onclick="check()" class="btn btn-success">Identify Image</button>
+<br><br>
+        <p style="font-size : 22px;" class="btn btn-danger">Object - <span id="result_object_name"></span> </p>
+        <br><br>
+        <p style="font-size : 22px;" class="btn btn-danger">Accuracy - <span id="result_object_accuracy"></span> </p>
+
+        </center>
+    </div>
+    
+    </body>
+</html>
