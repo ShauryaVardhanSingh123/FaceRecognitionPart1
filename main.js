@@ -1,18 +1,20 @@
-video="";
-canvas="";
+Webcam.set ({
+  width:350,
+  height:300,
+  image_format : 'png',
+  png_quality:90
+});
 
-function setup() {
-  canvas = createCanvas(300, 300);
-  canvas.center();
-  video = createCapture(VIDEO);
-  video.hide();
+camera=document.getElementById("camera");
+
+Webcam.attach('#camera');
+
+function take_snapshot(){
+  Webcam.snap(function(data_uri) {
+    document.getElementById("result").innerHTML = '<img id="captured_image" src="'+data_uri+'"/>';
+  });
 }
 
-function modelLoaded() 
-{
-console.log('Model Loaded!');
-}
+console.log('ml5 version:',ml5.version);
 
-function draw() {
-  image(video, 0, 0, 300, 300);
-}
+classifier=ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/mwIFyUQrH/model.json',modelLoaded);
